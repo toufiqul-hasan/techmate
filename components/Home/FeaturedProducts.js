@@ -23,7 +23,7 @@ export default function FeaturedProducts({ data }) {
                 height={500}
                 placeholder="blur"
                 blurDataURL={item.image}
-                alt={item.name}
+                alt={item.product_name}
                 className="rounded-t-md"
               />
 

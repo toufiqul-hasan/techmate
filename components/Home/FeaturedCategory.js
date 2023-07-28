@@ -77,7 +77,7 @@ export default function FeaturedCategory() {
             <p className="font-medium text-base mt-2">Storage Device</p>
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/component/monitor">
           <div className="flex flex-col items-center justify-center bg-white hover:bg-primary7 text-black rounded-md p-10">
             <Image
               src="https://www.startech.com.bd/image/cache/catalog/category-thumb/monitor-48x48.png"

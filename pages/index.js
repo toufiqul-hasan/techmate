@@ -7,7 +7,7 @@ export default function Home({ data }) {
     <MainLayout>
       <div className="bg-primary1 text-white">
         <FeaturedProducts data={data} />
-        <FeaturedCategory />
+        <FeaturedCategory data={data} />
       </div>
     </MainLayout>
   );

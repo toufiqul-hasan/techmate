@@ -62,12 +62,12 @@ export default function Header() {
             <div className="hover-dropdown-menu">
               <div
                 className={`relative ml-6 block whitespace-nowrap py-6 text-base font-medium hover:text-primary7 ${
-                  router.pathname === "/insights"
+                  router.pathname === "/component"
                     ? "text-primary7"
                     : "text-white"
                 }`}
               >
-                <Link href="/insights" className="flex items-center">
+                <Link href="/component" className="flex items-center">
                   Component
                   <ChevronDownIcon className="ml-1 h-5 w-5" />
                 </Link>
