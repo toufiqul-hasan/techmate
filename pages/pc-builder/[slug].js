@@ -36,6 +36,7 @@ export default function ProductList({ data }) {
     dispatch(addComponent(category, item));
     router.push("/pc-builder");
   };
+  
   return (
     <MainLayout>
       <div className="bg-primary1 text-white">
