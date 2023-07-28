@@ -34,6 +34,7 @@ export default function ProductList({ data }) {
 
   const handleAddToBuilder = (item) => {
     dispatch(addComponent(category, item));
+    router.push("/pc-builder");
   };
   return (
     <MainLayout>
