@@ -21,7 +21,6 @@ export default function FeaturedProducts({ data }) {
                 src={item.image}
                 width={500}
                 height={500}
-                layout="responsive"
                 placeholder="blur"
                 blurDataURL={item.image}
                 alt={item.name}

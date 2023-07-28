@@ -35,8 +35,8 @@ const submenus = {
       href: "/component/monitor",
     },
     {
-      name: "Others",
-      href: "/component/others",
+      name: "Graphics Card",
+      href: "/component/graphics-card",
     },
   ],
 };
