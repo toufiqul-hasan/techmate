@@ -28,7 +28,7 @@ export default function index() {
                 <p className="font-medium text-base mt-2">Processor</p>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/component/motherboard">
               <div className="flex flex-col items-center justify-center bg-white hover:bg-primary7 text-black rounded-md p-10">
                 <Image
                   src="https://www.startech.com.bd/image/cache/catalog/category-thumb/motherboard-48x48.png"
@@ -41,7 +41,7 @@ export default function index() {
                 <p className="font-medium text-base mt-2">Motherboard</p>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/component/ram">
               <div className="flex flex-col items-center justify-center bg-white hover:bg-primary7 text-black rounded-md p-10">
                 <Image
                   src="https://www.startech.com.bd/image/cache/catalog/category-thumb/ram-48x48.png"
@@ -54,7 +54,7 @@ export default function index() {
                 <p className="font-medium text-base mt-2">RAM</p>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/component/power-supply-unit">
               <div className="flex flex-col items-center justify-center bg-white hover:bg-primary7 text-black rounded-md h-full">
                 <Image
                   src="https://www.startech.com.bd/image/cache/catalog/category-thumb/powerstation-48x48.png"
@@ -67,7 +67,7 @@ export default function index() {
                 <p className="font-medium text-base mt-2">Power Supply Unit</p>
               </div>
             </Link>
-            <Link href="/">
+            <Link href="/component/storage-device">
               <div className="flex flex-col items-center justify-center bg-white hover:bg-primary7 text-black rounded-md h-full">
                 <Image
                   src="https://www.startech.com.bd/image/cache/catalog/category-thumb/ssd-48x48.png"

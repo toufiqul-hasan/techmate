@@ -48,7 +48,9 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-6 lg:justify-start">
           <div className="flex lg:flex-1">
-            <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
+            <Link href="/">
+              <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
+            </Link>
           </div>
 
           <div className="-my-2 -mr-2 lg:hidden">
@@ -128,7 +130,9 @@ export default function Header() {
           <div className="divide-y-2 rounded-2xl bg-primary1 shadow-2xl">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
+                <Link href="/">
+                  <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
+                </Link>
                 <div className="-mr-4 mt-2">
                   <Popover.Button className="inline-flex items-center justify-center p-2 text-white">
                     <span className="sr-only">Close menu</span>
