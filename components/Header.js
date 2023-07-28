@@ -1,4 +1,3 @@
-import Logo from "./Logo";
 import Link from "next/link";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
@@ -10,97 +9,50 @@ import {
 } from "@heroicons/react/24/solid";
 
 const submenus = {
-  insights: [
+  component: [
     {
-      name: "The Future of Technology",
-      href: "/insights/the-future-of-technology",
+      name: "Processor",
+      href: "/component/processor",
     },
     {
-      name: "Data and Analytics",
-      href: "/insights/data-and-analytics",
+      name: "Motherboard",
+      href: "/component/motherboard",
     },
     {
-      name: "Ethical AI",
-      href: "/insights/ethical-ai",
-    },
-  ],
-  services: [
-    {
-      name: "Business Process Management",
-      href: "/services/business-process-management",
+      name: "RAM",
+      href: "/component/ram",
     },
     {
-      name: "Cloud Services Automation",
-      href: "/services/cloud-services-automation",
+      name: "Power Supply Unit",
+      href: "/component/power-supply-unit",
     },
     {
-      name: "Customer Services Automation",
-      href: "/services/customer-services-automation",
+      name: "Storage Device",
+      href: "/component/storage-device",
     },
     {
-      name: "Predictive Data Modelling",
-      href: "/services/predictive-data-modelling",
+      name: "Monitor",
+      href: "/component/monitor",
     },
     {
-      name: "Visitor Management System",
-      href: "/services/visitor-management-system",
-    },
-    {
-      name: "Remote System Monitoring",
-      href: "/services/remote-system-monitoring",
-    },
-  ],
-  industries: [
-    {
-      name: "Robotics and AI",
-      href: "/industries/robotics-and-ai",
-    },
-    {
-      name: "Infrastructure Technology",
-      href: "/industries/infrastructure-technology",
-    },
-    {
-      name: "Life Sciences",
-      href: "/industries/life-sciences",
-    },
-    {
-      name: "Finance and Banking",
-      href: "/industries/finance-and-banking",
-    },
-    {
-      name: "Agriculture",
-      href: "/industries/agriculture",
-    },
-  ],
-  news: [
-    {
-      name: "News",
-      href: "/news",
-    },
-    {
-      name: "Media",
-      href: "/news",
-    },
-    {
-      name: "Blog",
-      href: "/news",
+      name: "Others",
+      href: "/component/others",
     },
   ],
 };
 
 export default function Header() {
   const router = useRouter();
-
   return (
     <Popover className="sticky top-0 z-50 bg-primary1">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-6 lg:justify-start">
           <div className="flex lg:flex-1">
-            <Logo />
+            <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
           </div>
 
           <div className="-my-2 -mr-2 lg:hidden">
-            <Popover.Button className="mt-2.5 inline-flex items-center justify-center p-2 pl-5 text-white">
+            <Popover.Button className="inline-flex items-center justify-center p-2 pl-5 text-white">
               <span className="sr-only">Open menu</span>
               <Bars3Icon className="h-8 w-8" aria-hidden="true" />
             </Popover.Button>
@@ -116,90 +68,12 @@ export default function Header() {
                 }`}
               >
                 <Link href="/insights" className="flex items-center">
-                  Insights
+                  Component
                   <ChevronDownIcon className="ml-1 h-5 w-5" />
                 </Link>
+
                 <div className="dropdown-menu absolute left-0 z-40 mt-2 w-80 origin-top-left rounded-md border-t-8 border-primary7 bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  {submenus.insights.map((item) => (
-                    <div key={item.name}>
-                      <Link href={item.href}>
-                        <button className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7">
-                          {item.name}
-                          <div className="bottom-border"></div>
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="hover-dropdown-menu">
-              <div
-                className={`relative ml-6 block whitespace-nowrap py-6 text-base font-medium hover:text-primary7 ${
-                  router.pathname === "/services"
-                    ? "text-primary7"
-                    : "text-white"
-                }`}
-              >
-                <Link href="/services" className="flex items-center">
-                  Services
-                  <ChevronDownIcon className="ml-1 h-5 w-5" />
-                </Link>
-                <div className="dropdown-menu absolute left-0 z-40 mt-2 w-96 origin-top-left rounded-md border-t-8 border-primary7 bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  {submenus.services.map((item) => (
-                    <div key={item.name}>
-                      <Link href={item.href}>
-                        <button className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7">
-                          {item.name}
-                          <div className="bottom-border"></div>
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="hover-dropdown-menu">
-              <div
-                className={`relative ml-6 block whitespace-nowrap py-6 text-base font-medium hover:text-primary7 ${
-                  router.pathname === "/industries"
-                    ? "text-primary7"
-                    : "text-white"
-                }`}
-              >
-                <Link href="/industries" className="flex items-center">
-                  Industries
-                  <ChevronDownIcon className="ml-1 h-5 w-5" />
-                </Link>
-                <div className="dropdown-menu absolute left-0 z-40 mt-2 w-80 origin-top-left rounded-md border-t-8 border-primary7 bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  {submenus.industries.map((item) => (
-                    <div key={item.name}>
-                      <Link href={item.href}>
-                        <button className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7">
-                          {item.name}
-                          <div className="bottom-border"></div>
-                        </button>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="hover-dropdown-menu">
-              <div
-                className={`relative ml-6 block whitespace-nowrap py-6 text-base font-medium hover:text-primary7 ${
-                  router.pathname === "/news" ? "text-primary7" : "text-white"
-                }`}
-              >
-                <Link href="/news" className="flex items-center">
-                  News
-                  <ChevronDownIcon className="ml-1 h-5 w-5" />
-                </Link>
-                <div className="dropdown-menu absolute left-0 z-40 mt-2 w-28 origin-top-left rounded-md border-t-8 border-primary7 bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  {submenus.news.map((item) => (
+                  {submenus.component.map((item) => (
                     <div key={item.name}>
                       <Link href={item.href}>
                         <button className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7">
@@ -214,30 +88,23 @@ export default function Header() {
             </div>
 
             <Link
-              href="/careers"
+              href="/pc-builder"
               className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
-                router.pathname === "/careers" ? "text-primary7" : "text-white"
+                router.pathname === "/pc-builder"
+                  ? "text-primary7"
+                  : "text-white"
               }`}
             >
-              Careers
+              PC Builder
             </Link>
 
             <Link
-              href="/safety"
+              href="/login"
               className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
-                router.pathname === "/safety" ? "text-primary7" : "text-white"
+                router.pathname === "/login" ? "text-primary7" : "text-white"
               }`}
             >
-              Safety
-            </Link>
-
-            <Link
-              href="/about-us"
-              className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
-                router.pathname === "/about-us" ? "text-primary7" : "text-white"
-              }`}
-            >
-              About us
+              Login
             </Link>
           </div>
         </div>
@@ -261,7 +128,7 @@ export default function Header() {
           <div className="divide-y-2 rounded-2xl bg-primary1 shadow-2xl">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
-                <Logo />
+                <h1 className="text-white font-bold text-3xl">TECHMATE</h1>
                 <div className="-mr-4 mt-2">
                   <Popover.Button className="inline-flex items-center justify-center p-2 text-white">
                     <span className="sr-only">Close menu</span>
@@ -284,19 +151,19 @@ export default function Header() {
                   <Menu
                     as="div"
                     className={`relative whitespace-nowrap py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/insights"
+                      router.pathname === "/component"
                         ? "text-primary7"
                         : "text-white"
                     }`}
                   >
-                    <Link href="/insights">
+                    <Link href="/component">
                       <Menu.Button
                         type="button"
                         aria-expanded="false"
                         aria-haspopup="true"
                         className="flex items-center"
                       >
-                        Insights
+                        Component
                         <ChevronDownIcon
                           className="ml-1 h-5 w-5"
                           aria-hidden="true"
@@ -312,151 +179,7 @@ export default function Header() {
                         aria-labelledby="user-menu-button"
                         tabIndex="-1"
                       >
-                        {submenus.insights.map((item) => (
-                          <div key={item.name}>
-                            <Link href={item.href}>
-                              <button
-                                role="menuitem"
-                                tabIndex="-1"
-                                className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7"
-                              >
-                                {item.name}
-                              </button>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </Menu.Items>
-                  </Menu>
-
-                  <Menu
-                    as="div"
-                    className={`relative whitespace-nowrap py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/services"
-                        ? "text-primary7"
-                        : "text-white"
-                    }`}
-                  >
-                    <Link href="/services">
-                      <Menu.Button
-                        type="button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        className="flex items-center"
-                      >
-                        Services
-                        <ChevronDownIcon
-                          className="ml-1 h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </Menu.Button>
-                    </Link>
-
-                    <Menu.Items>
-                      <div
-                        className="absolute left-0 z-40 mt-2 origin-top-left rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:left-0 sm:w-96"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="user-menu-button"
-                        tabIndex="-1"
-                      >
-                        {submenus.services.map((item) => (
-                          <div key={item.name}>
-                            <Link href={item.href}>
-                              <button
-                                role="menuitem"
-                                tabIndex="-1"
-                                className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7"
-                              >
-                                {item.name}
-                              </button>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </Menu.Items>
-                  </Menu>
-
-                  <Menu
-                    as="div"
-                    className={`relative whitespace-nowrap py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/industries"
-                        ? "text-primary7"
-                        : "text-white"
-                    }`}
-                  >
-                    <Link href="/industries">
-                      <Menu.Button
-                        type="button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        className="flex items-center"
-                      >
-                        Industries
-                        <ChevronDownIcon
-                          className="ml-1 h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </Menu.Button>
-                    </Link>
-
-                    <Menu.Items>
-                      <div
-                        className="absolute right-0 z-40 mt-2 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:left-0"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="user-menu-button"
-                        tabIndex="-1"
-                      >
-                        {submenus.industries.map((item) => (
-                          <div key={item.name}>
-                            <Link href={item.href}>
-                              <button
-                                role="menuitem"
-                                tabIndex="-1"
-                                className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7"
-                              >
-                                {item.name}
-                              </button>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    </Menu.Items>
-                  </Menu>
-
-                  <Menu
-                    as="div"
-                    className={`relative whitespace-nowrap py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/news"
-                        ? "text-primary7"
-                        : "text-white"
-                    }`}
-                  >
-                    <Link href="/news">
-                      <Menu.Button
-                        type="button"
-                        aria-expanded="false"
-                        aria-haspopup="true"
-                        className="flex items-center"
-                      >
-                        News
-                        <ChevronDownIcon
-                          className="ml-1 h-5 w-5"
-                          aria-hidden="true"
-                        />
-                      </Menu.Button>
-                    </Link>
-
-                    <Menu.Items>
-                      <div
-                        className="absolute left-0 z-40 mt-2 origin-top-left rounded-md bg-white p-5 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:left-0"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="user-menu-button"
-                        tabIndex="-1"
-                      >
-                        {submenus.news.map((item) => (
+                        {submenus.component.map((item) => (
                           <div key={item.name}>
                             <Link href={item.href}>
                               <button
@@ -474,36 +197,25 @@ export default function Header() {
                   </Menu>
 
                   <Link
-                    href="/careers"
+                    href="/pc-builder"
                     className={`py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/careers"
+                      router.pathname === "/pc-builder"
                         ? "text-primary7"
                         : "text-white"
                     }`}
                   >
-                    Careers
+                    PC Builder
                   </Link>
 
                   <Link
-                    href="/safety"
+                    href="/login"
                     className={`py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/safety"
+                      router.pathname === "/login"
                         ? "text-primary7"
                         : "text-white"
                     }`}
                   >
-                    Safety
-                  </Link>
-
-                  <Link
-                    href="/about-us"
-                    className={`py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/about-us"
-                        ? "text-primary7"
-                        : "text-white"
-                    }`}
-                  >
-                    About us
+                    Login
                   </Link>
                 </nav>
               </div>

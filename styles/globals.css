@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dropdown Menu Start */
+
+.dropdown-menu {
+  display: none;
+}
+
+.hover-dropdown-menu:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a button:hover {
+  margin-left: 10px;
+  transition: all 0.8s ease;
+}
+
+.dropdown-menu a button .bottom-border {
+  visibility: hidden;
+  border: 1px solid #03AEF4;
+  margin-top: 2px;
+  width: 0;
+  transition: width 0.5s ease;
+  transition-duration: 1s;
+}
+
+.dropdown-menu a button:hover .bottom-border {
+  visibility: visible;
+  width: 100%;
+}
+
+.dropdown-menu a button {
+  transition: all 0.8s ease;
+}
+
+/* Dropdown Menu End */

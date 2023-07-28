@@ -1,27 +1,10 @@
-import Logo from "./Logo";
 import Link from "next/link";
-import Image from "next/image";
 
 const navigation = {
-  quickLinks: [
-    { name: "Insights", href: "/insights" },
-    { name: "Services", href: "/services" },
-    { name: "Industries", href: "/industries" },
-    { name: "News", href: "/news" },
-    { name: "Careers", href: "/careers" },
-    { name: "Safety", href: "/safety" },
-    { name: "About us", href: "/about-us" },
-    { name: "Contact us", href: "/contact-us" },
-  ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms and Use", href: "/terms-and-use" },
-    { name: "Payment Terms", href: "/payment-terms" },
-  ],
   social: [
     {
       name: "Linkedin",
-      href: "https://www.linkedin.com/company/anfactorai",
+      href: "https://www.linkedin.com",
       icon: (props) => (
         <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
@@ -30,7 +13,7 @@ const navigation = {
     },
     {
       name: "Facebook",
-      href: "https://www.facebook.com/anfactorai",
+      href: "https://www.facebook.com",
       icon: (props) => (
         <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z" />
@@ -57,7 +40,7 @@ const navigation = {
     },
     {
       name: "YouTube",
-      href: "https://www.youtube.com/@anfactorai3666",
+      href: "https://www.youtube.com/",
       icon: (props) => (
         <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
           <path d="M10 9.333l5.333 2.662-5.333 2.672v-5.334zm14-4.333v14c0 2.761-2.238 5-5 5h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5zm-4 7c-.02-4.123-.323-5.7-2.923-5.877-2.403-.164-7.754-.163-10.153 0-2.598.177-2.904 1.747-2.924 5.877.02 4.123.323 5.7 2.923 5.877 2.399.163 7.75.164 10.153 0 2.598-.177 2.904-1.747 2.924-5.877z" />
@@ -72,71 +55,10 @@ export default function Footer() {
   return (
     <div className="bg-primary1 text-white">
       <div className="mx-auto max-w-7xl bg-primary1 px-4 pt-40 sm:px-6">
-        <div className="mb-8 grid gap-5 lg:grid-cols-6 lg:gap-16">
-          <div className="lg:col-span-3">
-            <Logo />
-            <p className="mt-4 text-base font-normal lg:max-w-sm">
-              AnfactorAI prioritizes the safety of our clients’ data and
-              continuously implements measures to ensure secure and reliable
-              services.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
-            <div className="lg:col-span-1">
-              <p className="font-semibold tracking-wide">Quick Links</p>
-              <ul className="mt-2 space-y-2">
-                {navigation.quickLinks.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="transition-colors duration-300 hover:text-primary7"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="lg:col-span-2">
-              <p className="font-semibold tracking-wide">Newsletter</p>
-              <p className="mt-2 text-base">
-                Subscribe our newsletter and get all latest news.
-              </p>
-              <form className="mt-4 flex flex-row rounded-full border-2 border-white px-2">
-                <input
-                  placeholder="Email"
-                  required
-                  type="text"
-                  className="focus:border-transparent h-12 w-full appearance-none rounded-full bg-primary1 px-2 focus:outline-none"
-                />
-                <button type="submit">
-                  <Image
-                    src="/footer/send.png"
-                    width={24}
-                    height={24}
-                    alt="Arrow Right"
-                  />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
         <div className="flex flex-col items-center justify-between border-t pt-5 pb-10 lg:flex-row">
           <p className="text-sm font-normal xl:text-base">
-            Copyright @{year} AnfactorAI. All rights reserved.
+            Copyright @{year} Techmate. All rights reserved.
           </p>
-          <div className="mt-4 text-sm font-normal lg:mt-0 xl:text-base">
-            {navigation.legal.map((item) => (
-              <span key={item.name}>
-                <Link
-                  href={item.href}
-                  className="mx-1 hover:text-primary7 sm:mx-2"
-                >
-                  {item.name}
-                </Link>
-              </span>
-            ))}
-          </div>
           <div className="mt-4 flex items-center justify-center space-x-4 lg:mt-0">
             {navigation.social.map((item) => (
               <Link
