@@ -9,6 +9,7 @@ export default function Product({ data, category }) {
   const handleAddToBuilder = (component) => {
     dispatch(addComponent(category, component));
   };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
       {data.map((item) => (

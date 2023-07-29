@@ -1,13 +1,30 @@
+import {
+  selectPSU,
+  selectRAM,
+  selectMonitor,
+  selectStorage,
+  selectProcessor,
+  selectMotherboard,
+} from "../redux/store";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 import MainLayout from "../layout/MainLayout";
 
 export default function PcBuilder() {
-  const builderState = useSelector((state) => state);
+  const ram = useSelector(selectRAM);
+  const psu = useSelector(selectPSU);
+  const monitor = useSelector(selectMonitor);
+  const storage = useSelector(selectStorage);
+  const processor = useSelector(selectProcessor);
+  const motherboard = useSelector(selectMotherboard);
 
-  const isCompleteBuild = Object.values(builderState).every(
-    (component) => component !== null
-  );
+  const isCompleteBuild =
+    processor !== null &&
+    motherboard !== null &&
+    ram !== null &&
+    psu !== null &&
+    storage !== null &&
+    monitor !== null;
 
   return (
     <MainLayout>
@@ -16,193 +33,156 @@ export default function PcBuilder() {
           <h1 className="text-3xl font-bold text-center mb-10">PC Builder</h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {builderState.processor && (
+            {processor && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.processor.image}
+                  src={processor.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.processor.image}
-                  alt={builderState.processor.product_name}
+                  blurDataURL={processor.image}
+                  alt={processor.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.processor.product_name}
+                    {processor.product_name}
                   </h2>
-                  <p className="font-normal text-base">
-                    {builderState.processor.category}
-                  </p>
-                  <p className="font-normal text-base">
-                    {" "}
-                    ৳ {builderState.processor.price}
-                  </p>
-                  <p className="font-normal text-base">
-                    {builderState.processor.status}
-                  </p>
+                  <p className="font-normal text-base">{processor.category}</p>
+                  <p className="font-normal text-base"> ৳ {processor.price}</p>
+                  <p className="font-normal text-base">{processor.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.processor.average_rating}
+                    {processor.average_rating}
                   </p>
                 </div>
               </div>
             )}
 
-            {builderState.motherboard && (
+            {motherboard && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.motherboard.image}
+                  src={motherboard.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.motherboard.image}
-                  alt={builderState.motherboard.product_name}
+                  blurDataURL={motherboard.image}
+                  alt={motherboard.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.motherboard.product_name}
+                    {motherboard.product_name}
                   </h2>
                   <p className="font-normal text-base">
-                    {builderState.motherboard.category}
+                    {motherboard.category}
                   </p>
                   <p className="font-normal text-base">
                     {" "}
-                    ৳ {builderState.motherboard.price}
+                    ৳ {motherboard.price}
                   </p>
-                  <p className="font-normal text-base">
-                    {builderState.motherboard.status}
-                  </p>
+                  <p className="font-normal text-base">{motherboard.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.motherboard.average_rating}
+                    {motherboard.average_rating}
                   </p>
                 </div>
               </div>
             )}
 
-            {builderState.ram && (
+            {ram && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.ram.image}
+                  src={ram.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.ram.image}
-                  alt={builderState.ram.product_name}
+                  blurDataURL={ram.image}
+                  alt={ram.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.ram.product_name}
+                    {ram.product_name}
                   </h2>
-                  <p className="font-normal text-base">
-                    {builderState.ram.category}
-                  </p>
-                  <p className="font-normal text-base">
-                    {" "}
-                    ৳ {builderState.ram.price}
-                  </p>
-                  <p className="font-normal text-base">
-                    {builderState.ram.status}
-                  </p>
+                  <p className="font-normal text-base">{ram.category}</p>
+                  <p className="font-normal text-base"> ৳ {ram.price}</p>
+                  <p className="font-normal text-base">{ram.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.ram.average_rating}
+                    {ram.average_rating}
                   </p>
                 </div>
               </div>
             )}
 
-            {builderState.psu && (
+            {psu && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.psu.image}
+                  src={psu.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.psu.image}
-                  alt={builderState.psu.product_name}
+                  blurDataURL={psu.image}
+                  alt={psu.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.psu.product_name}
+                    {psu.product_name}
                   </h2>
-                  <p className="font-normal text-base">
-                    {builderState.psu.category}
-                  </p>
-                  <p className="font-normal text-base">
-                    {" "}
-                    ৳ {builderState.psu.price}
-                  </p>
-                  <p className="font-normal text-base">
-                    {builderState.psu.status}
-                  </p>
+                  <p className="font-normal text-base">{psu.category}</p>
+                  <p className="font-normal text-base"> ৳ {psu.price}</p>
+                  <p className="font-normal text-base">{psu.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.psu.average_rating}
+                    {psu.average_rating}
                   </p>
                 </div>
               </div>
             )}
 
-            {builderState.storage && (
+            {storage && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.storage.image}
+                  src={storage.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.storage.image}
-                  alt={builderState.storage.product_name}
+                  blurDataURL={storage.image}
+                  alt={storage.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.storage.product_name}
+                    {storage.product_name}
                   </h2>
-                  <p className="font-normal text-base">
-                    {builderState.storage.category}
-                  </p>
-                  <p className="font-normal text-base">
-                    {" "}
-                    ৳ {builderState.storage.price}
-                  </p>
-                  <p className="font-normal text-base">
-                    {builderState.storage.status}
-                  </p>
+                  <p className="font-normal text-base">{storage.category}</p>
+                  <p className="font-normal text-base"> ৳ {storage.price}</p>
+                  <p className="font-normal text-base">{storage.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.storage.average_rating}
+                    {storage.average_rating}
                   </p>
                 </div>
               </div>
             )}
 
-            {builderState.monitor && (
+            {monitor && (
               <div className="flex flex-col border border-white rounded-md shadow-md">
                 <Image
-                  src={builderState.monitor.image}
+                  src={monitor.image}
                   width={500}
                   height={500}
                   placeholder="blur"
-                  blurDataURL={builderState.monitor.image}
-                  alt={builderState.monitor.product_name}
+                  blurDataURL={monitor.image}
+                  alt={monitor.product_name}
                   className="rounded-t-md"
                 />
                 <div className="px-4">
                   <h2 className="font-medium text-xl my-2">
-                    {builderState.monitor.product_name}
+                    {monitor.product_name}
                   </h2>
-                  <p className="font-normal text-base">
-                    {builderState.monitor.category}
-                  </p>
-                  <p className="font-normal text-base">
-                    {" "}
-                    ৳ {builderState.monitor.price}
-                  </p>
-                  <p className="font-normal text-base">
-                    {builderState.monitor.status}
-                  </p>
+                  <p className="font-normal text-base">{monitor.category}</p>
+                  <p className="font-normal text-base"> ৳ {monitor.price}</p>
+                  <p className="font-normal text-base">{monitor.status}</p>
                   <p className="font-normal text-base mb-5">
-                    {builderState.monitor.average_rating}
+                    {monitor.average_rating}
                   </p>
                 </div>
               </div>

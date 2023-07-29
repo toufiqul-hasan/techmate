@@ -26,3 +26,9 @@ const store = configureStore({
 });
 
 export default store;
+export const selectRAM = (state) => state.ram;
+export const selectPSU = (state) => state.psu;
+export const selectMonitor = (state) => state.monitor;
+export const selectStorage = (state) => state.storage;
+export const selectProcessor = (state) => state.processor;
+export const selectMotherboard = (state) => state.motherboard;
