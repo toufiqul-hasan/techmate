@@ -19,7 +19,6 @@ export default function Product({ data }) {
               alt={item.product_name}
               className="rounded-t-md"
             />
-            
             <div className="px-4">
               <h2 className="font-medium text-xl my-2">{item.product_name}</h2>
               <p className="font-normal text-base">{item.category}</p>
@@ -30,7 +29,7 @@ export default function Product({ data }) {
           </div>
 
           <div className="px-4">
-            <Link href={`/`}>
+            <Link href={`/component/${item._id}`}>
               <button className="flex items-center justify-center w-full py-4 font-medium text-base rounded-md shadow-lg transition ease-in-out duration-200 my-5 bg-primary3 px-4 hover:bg-primary7 hover:text-primary1">
                 Details
               </button>

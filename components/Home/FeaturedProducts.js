@@ -10,6 +10,7 @@ export default function FeaturedProducts({ data }) {
       <h2 className="font-normal text-base lg:text-lg text-center mb-10">
         Check & Get Your Desired Product!
       </h2>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         {data.map((item) => (
           <div
@@ -39,7 +40,7 @@ export default function FeaturedProducts({ data }) {
             </div>
 
             <div className="px-4">
-              <Link href={`/`}>
+              <Link href={`/component/${item._id}`}>
                 <button className="flex items-center justify-center w-full py-4 font-medium text-base rounded-md shadow-lg transition ease-in-out duration-200 my-5 bg-primary3 px-4 hover:bg-primary7 hover:text-primary1">
                   Details
                 </button>
