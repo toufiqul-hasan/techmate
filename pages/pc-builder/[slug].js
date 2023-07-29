@@ -39,7 +39,7 @@ export default function ProductList({ data }) {
     <MainLayout>
       <div className="bg-primary1 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {filteredData.map((item) => (
               <div
                 key={item._id}
