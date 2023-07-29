@@ -22,7 +22,7 @@ export default function RAM({ data }) {
 export const getStaticProps = async () => {
   const response = await fetch("https://techmatebd.onrender.com/product");
   const data = await response.json();
-  const filteredData = data.filter((item) => item.category === "RAM");
+  const filteredData = data.filter((item) => item.category === "Ram");
   return {
     props: {
       data: filteredData,

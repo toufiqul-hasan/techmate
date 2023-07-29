@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
-  processor: null,
-  motherboard: null,
-  ram: null,
-  psu: null,
-  storage: null,
-  monitor: null,
+  Processor: null,
+  Motherboard: null,
+  Ram: null,
+  PowerSupplyUnit: null,
+  StorageDevice: null,
+  Monitor: null,
 };
 
 const builderReducer = (state = initialState, action) => {
@@ -26,9 +26,9 @@ const store = configureStore({
 });
 
 export default store;
-export const selectRAM = (state) => state.ram;
-export const selectPSU = (state) => state.psu;
-export const selectMonitor = (state) => state.monitor;
-export const selectStorage = (state) => state.storage;
-export const selectProcessor = (state) => state.processor;
-export const selectMotherboard = (state) => state.motherboard;
+export const selectRAM = (state) => state.Ram;
+export const selectPSU = (state) => state.PowerSupplyUnit;
+export const selectMonitor = (state) => state.Monitor;
+export const selectStorage = (state) => state.StorageDevice;
+export const selectProcessor = (state) => state.Processor;
+export const selectMotherboard = (state) => state.Motherboard;
