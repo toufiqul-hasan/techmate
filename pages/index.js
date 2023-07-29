@@ -1,11 +1,13 @@
 import MainLayout from "../layout/MainLayout";
 import FeaturedProducts from "../components/Home/FeaturedProducts";
 import FeaturedCategory from "../components/Home/FeaturedCategory";
+import Banner from "../components/Home/Banner";
 
 export default function Home({ data }) {
   return (
     <MainLayout>
       <div className="bg-primary1 text-white">
+        <Banner />
         <FeaturedProducts data={data} />
         <FeaturedCategory />
       </div>

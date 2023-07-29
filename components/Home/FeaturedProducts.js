@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FeaturedProducts({ data }) {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-20 lg:mt-40">
       <h1 className="font-semibold text-4xl lg:text-5xl text-center mb-2">
         Featured Products
       </h1>
