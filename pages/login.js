@@ -129,6 +129,7 @@ export default function Login() {
                   </g>{" "}
                 </g>{" "}
               </svg>
+
               <span>Continue with Google</span>
             </button>
           </div>
