@@ -12,7 +12,7 @@ export default function PowerSupplyUnit({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired Power Supply Unit!
           </h2>
-          <Product data={data} />
+          <Product data={data} category="psu" />
         </div>
       </div>
     </MainLayout>

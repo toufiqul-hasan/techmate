@@ -12,7 +12,7 @@ export default function Motherboard({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired Motherboard!
           </h2>
-          <Product data={data} />
+          <Product data={data} category="motherboard" />
         </div>
       </div>
     </MainLayout>

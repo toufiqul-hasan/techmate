@@ -12,7 +12,7 @@ export default function Processor({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired Processor!
           </h2>
-          <Product data={data} />
+          <Product data={data} category="processor" />
         </div>
       </div>
     </MainLayout>

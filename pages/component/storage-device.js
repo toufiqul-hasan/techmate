@@ -12,7 +12,7 @@ export default function StorageDevice({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired Storage Device!
           </h2>
-          <Product data={data} />
+          <Product data={data} category="storage" />
         </div>
       </div>
     </MainLayout>
