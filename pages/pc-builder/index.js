@@ -8,10 +8,12 @@ import {
 } from "../../redux/store";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import MainLayout from "../../layout/MainLayout";
 
 export default function PcBuilder() {
+  const [buildComplete, setBuildComplete] = useState(false);
   const ram = useSelector(selectRAM);
   const psu = useSelector(selectPSU);
   const monitor = useSelector(selectMonitor);
@@ -33,6 +35,7 @@ export default function PcBuilder() {
           <h1 className="font-semibold text-4xl lg:text-5xl text-center mb-2">
             PC Builder
           </h1>
+
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Choose Your Component & Get Your Desired PC!
           </h2>
@@ -263,6 +266,7 @@ export default function PcBuilder() {
 
           <div className="flex justify-center">
             <button
+              onClick={() => setBuildComplete(true)}
               disabled={!isCompleteBuild}
               className={`px-4 py-4 font-medium text-base rounded-md shadow-lg transition ease-in-out duration-200 my-5 bg-primary3 ${
                 isCompleteBuild
@@ -273,6 +277,14 @@ export default function PcBuilder() {
               Complete Build
             </button>
           </div>
+
+          {buildComplete && (
+            <div className="flex justify-center pt-5">
+              <div className="px-4 py-2 font-medium text-base rounded-md bg-white text-primary1">
+                PC build completed successfully!
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </MainLayout>
