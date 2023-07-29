@@ -11,7 +11,7 @@ export default function FeaturedProducts({ data }) {
         Check & Get Your Desired Product!
       </h2>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {data.map((item) => (
           <div
             key={item._id}

@@ -40,7 +40,7 @@ export default function PcBuilder() {
             Choose Your Component & Get Your Desired PC!
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             <div>
               <div className="flex justify-between mb-5">
                 <h2 className="text-xl font-medium mt-1">Processor</h2>
