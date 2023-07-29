@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
   processor: null,
@@ -21,6 +21,8 @@ const builderReducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(builderReducer);
+const store = configureStore({
+  reducer: builderReducer,
+});
 
 export default store;
