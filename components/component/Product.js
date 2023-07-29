@@ -1,15 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
-import { addComponent } from "../../redux/actions";
 
-export default function Product({ data, category }) {
-  const dispatch = useDispatch();
-
-  const handleAddToBuilder = (component) => {
-    dispatch(addComponent(category, component));
-  };
-
+export default function Product({ data }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
       {data.map((item) => (
@@ -37,12 +29,6 @@ export default function Product({ data, category }) {
           </div>
 
           <div className="px-4">
-            <button
-              onClick={() => handleAddToBuilder(item)}
-              className="flex items-center justify-center w-full py-4 font-medium text-base rounded-md shadow-lg transition ease-in-out duration-200 my-2 bg-primary3 px-4 hover:bg-primary7 hover:text-primary1"
-            >
-              Add To Builder
-            </button>
             <Link href={`/component/${item._id}`}>
               <button className="flex items-center justify-center w-full py-4 font-medium text-base rounded-md shadow-lg transition ease-in-out duration-200 my-5 bg-primary3 px-4 hover:bg-primary7 hover:text-primary1">
                 Details

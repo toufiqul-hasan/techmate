@@ -12,7 +12,7 @@ export default function RAM({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired RAM!
           </h2>
-          <Product data={data} category="ram" />
+          <Product data={data} />
         </div>
       </div>
     </MainLayout>

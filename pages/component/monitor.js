@@ -12,7 +12,7 @@ export default function Monitor({ data }) {
           <h2 className="font-normal text-base lg:text-lg text-center mb-10">
             Check & Get Your Desired Monitor!
           </h2>
-          <Product data={data} category="monitor" />
+          <Product data={data} />
         </div>
       </div>
     </MainLayout>
