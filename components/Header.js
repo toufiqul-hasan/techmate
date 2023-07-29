@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Fragment } from "react";
-import { useRouter } from "next/router";
-import { Menu, Popover, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   ChevronDownIcon,
   XMarkIcon,
 } from "@heroicons/react/24/solid";
+import { useRouter } from "next/router";
+import { useSession, signOut } from "next-auth/react";
+import { Menu, Popover, Transition } from "@headlessui/react";
 
 const submenus = {
   component: [
@@ -43,6 +44,7 @@ const submenus = {
 
 export default function Header() {
   const router = useRouter();
+  const { data: session } = useSession();
   return (
     <Popover className="sticky top-0 z-50 bg-primary1">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -100,14 +102,26 @@ export default function Header() {
               PC Builder
             </Link>
 
-            <Link
-              href="/login"
-              className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
-                router.pathname === "/login" ? "text-primary7" : "text-white"
-              }`}
-            >
-              Login
-            </Link>
+            {session?.user ? (
+              <Link
+                href="/login"
+                onClick={() => signOut()}
+                className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
+                  router.pathname === "/login" ? "text-primary7" : "text-white"
+                }`}
+              >
+                Logout
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
+                  router.pathname === "/login" ? "text-primary7" : "text-white"
+                }`}
+              >
+                Login
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -127,7 +141,7 @@ export default function Header() {
           focus
           className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden"
         >
-          <div className="divide-y-2 rounded-2xl bg-primary1 shadow-2xl">
+          <div className="divide-y-2 rounded-2xl bg-primary3 shadow-2xl">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <Link href="/">
@@ -211,16 +225,30 @@ export default function Header() {
                     PC Builder
                   </Link>
 
-                  <Link
-                    href="/login"
-                    className={`py-2 text-base font-medium hover:text-primary7 ${
-                      router.pathname === "/login"
-                        ? "text-primary7"
-                        : "text-white"
-                    }`}
-                  >
-                    Login
-                  </Link>
+                  {session?.user ? (
+                    <Link
+                      href="/login"
+                      onClick={() => signOut()}
+                      className={`py-2 text-base font-medium hover:text-primary7 ${
+                        router.pathname === "/login"
+                          ? "text-primary7"
+                          : "text-white"
+                      }`}
+                    >
+                      Logout
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className={`py-2 text-base font-medium hover:text-primary7 ${
+                        router.pathname === "/login"
+                          ? "text-primary7"
+                          : "text-white"
+                      }`}
+                    >
+                      Login
+                    </Link>
+                  )}
                 </nav>
               </div>
             </div>
