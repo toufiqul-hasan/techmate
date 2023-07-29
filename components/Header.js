@@ -46,7 +46,7 @@ export default function Header() {
   const router = useRouter();
   const { data: session } = useSession();
   return (
-    <Popover className="sticky top-0 z-50 bg-primary1">
+    <Popover className="top-0 z-50 bg-primary1">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between py-6 lg:justify-start">
           <div className="flex lg:flex-1">
@@ -65,7 +65,7 @@ export default function Header() {
           <div className="mt-2 hidden items-center lg:flex">
             <div className="hover-dropdown-menu">
               <div
-                className={`relative ml-6 block whitespace-nowrap py-6 text-base font-medium hover:text-primary7 ${
+                className={`relative ml-6 block whitespace-nowrap py-6 text-lg font-medium hover:text-primary7 ${
                   router.pathname === "/component"
                     ? "text-primary7"
                     : "text-white"
@@ -80,7 +80,7 @@ export default function Header() {
                   {submenus.component.map((item) => (
                     <div key={item.name}>
                       <Link href={item.href}>
-                        <button className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7">
+                        <button className="block cursor-pointer px-4 py-2 text-lg font-normal text-primary1 hover:text-primary7">
                           {item.name}
                           <div className="bottom-border"></div>
                         </button>
@@ -93,7 +93,7 @@ export default function Header() {
 
             <Link
               href="/pc-builder"
-              className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
+              className={`ml-6 whitespace-nowrap text-lg font-medium hover:text-primary7 ${
                 router.pathname === "/pc-builder"
                   ? "text-primary7"
                   : "text-white"
@@ -106,7 +106,7 @@ export default function Header() {
               <Link
                 href="/login"
                 onClick={() => signOut()}
-                className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
+                className={`ml-6 whitespace-nowrap text-lg font-medium hover:text-primary7 ${
                   router.pathname === "/login" ? "text-primary7" : "text-white"
                 }`}
               >
@@ -115,7 +115,7 @@ export default function Header() {
             ) : (
               <Link
                 href="/login"
-                className={`ml-6 whitespace-nowrap text-base font-medium hover:text-primary7 ${
+                className={`ml-6 whitespace-nowrap text-lg font-medium hover:text-primary7 ${
                   router.pathname === "/login" ? "text-primary7" : "text-white"
                 }`}
               >
@@ -159,7 +159,7 @@ export default function Header() {
                 <nav className="grid grid-cols-2 gap-y-4 gap-x-8 pt-5">
                   <Link
                     href="/"
-                    className={`py-2 text-base font-medium hover:text-primary7 ${
+                    className={`py-2 text-lg font-medium hover:text-primary7 ${
                       router.pathname === "/" ? "text-primary7" : "text-white"
                     }`}
                   >
@@ -168,7 +168,7 @@ export default function Header() {
 
                   <Menu
                     as="div"
-                    className={`relative whitespace-nowrap py-2 text-base font-medium hover:text-primary7 ${
+                    className={`relative whitespace-nowrap py-2 text-lg font-medium hover:text-primary7 ${
                       router.pathname === "/component"
                         ? "text-primary7"
                         : "text-white"
@@ -203,7 +203,7 @@ export default function Header() {
                               <button
                                 role="menuitem"
                                 tabIndex="-1"
-                                className="block cursor-pointer px-4 py-2 text-base font-normal text-primary1 hover:text-primary7"
+                                className="block cursor-pointer px-4 py-2 text-lg font-normal text-primary1 hover:text-primary7"
                               >
                                 {item.name}
                               </button>
@@ -216,7 +216,7 @@ export default function Header() {
 
                   <Link
                     href="/pc-builder"
-                    className={`py-2 text-base font-medium hover:text-primary7 ${
+                    className={`py-2 text-lg font-medium hover:text-primary7 ${
                       router.pathname === "/pc-builder"
                         ? "text-primary7"
                         : "text-white"
@@ -229,7 +229,7 @@ export default function Header() {
                     <Link
                       href="/login"
                       onClick={() => signOut()}
-                      className={`py-2 text-base font-medium hover:text-primary7 ${
+                      className={`py-2 text-lg font-medium hover:text-primary7 ${
                         router.pathname === "/login"
                           ? "text-primary7"
                           : "text-white"
@@ -240,7 +240,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href="/login"
-                      className={`py-2 text-base font-medium hover:text-primary7 ${
+                      className={`py-2 text-lg font-medium hover:text-primary7 ${
                         router.pathname === "/login"
                           ? "text-primary7"
                           : "text-white"
