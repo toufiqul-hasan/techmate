@@ -1,2 +1,11 @@
-export { default } from "next-auth/middleware";
-export const config = { matcher: ["/pc-builder"] };
+import { withAuth } from "next-auth/middleware";
+
+export default withAuth({
+  callbacks: {
+    authorized: ({ token }) => !!token,
+  },
+});
+
+export const config = {
+  matcher: ["/pc-builder"],
+};
